@@ -1,7 +1,7 @@
 function sendEmail() {
     Email.send({
       SecureToken: "3078f2f6-ed04-4565-a20b-4ec3d33468e0",
-      To : 'ammmil@btinternet.com',
+      To : '',
       From : document.getElementById("email").value,
       Subject : "Contact Us Form",
       Body : "Name: " + document.getElementById("name").value
