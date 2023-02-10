@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const userController = require('./controllers/userController')
 const bcrypt = require('bcrypt')
 const { expr } = require('jquery')
-
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
@@ -16,14 +16,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.set('strictQuery', true)
 
 app.set("view engine", "ejs")
+
 app.use(express.static('public'))
 app.use(express.urlencoded( {extended: true} ))
-
-
-
-
 app.use(morgan('dev'))
-
+app.use(cookieParser())
 
 
 
@@ -63,4 +60,3 @@ app.use((req, res) => {
     res.status(404).render('404', { title: 'JaCCodes - Page Not Found' })
     //res.sendFile('404.html', { root: 'C:/Users/jackc/Desktop/Sn0wey Portfolio/src/pages'})
 })
-
