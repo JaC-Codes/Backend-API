@@ -5,21 +5,30 @@
         
         <%- include('./partials/nav.ejs') %>
 
-        <div class="form-wrap">
-        
-            <form action="/api/user" method="post">
-            
-                <h1>Sign Up</h1>
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="dob" name="dob" placeholder="Date Of birth" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="submit" value="Sign Up">
-        
-            </form>
-        
-        </div>
+        <div class="login">
+			<h1>Register</h1>
+			<form action="/api/user" method="post">
+                <label for="name">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="name" placeholder="Name" id="name" required>
+                <label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="dob" placeholder="Date Of Birth" id="dob" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="email" placeholder="Email" id="email" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Login">
+			</form>
+		</div> 
 
+        <%- include('./partials/footer.ejs') %>
         <%- include('./partials/script.ejs') %>
     </body>
 </html>
